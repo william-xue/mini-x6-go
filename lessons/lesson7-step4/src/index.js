@@ -1,0 +1,6 @@
+export { Designer } from './designer.js'
+export { DesignerModel } from '../../lesson7-step3/src/model.js'
+export { DesignerView } from './view.js'
+export { DesignerInteraction } from '../../lesson7-step3/src/interaction.js'
+export { nearestPointOnOutline } from '../../lesson7-step3/src/outline-geometry.js'
+export { samplePath } from './path-sampling.js'

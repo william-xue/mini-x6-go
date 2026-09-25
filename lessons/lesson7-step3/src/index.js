@@ -1,0 +1,5 @@
+export { Designer } from './designer.js'
+export { DesignerModel } from './model.js'
+export { DesignerView } from './view.js'
+export { DesignerInteraction } from './interaction.js'
+export { nearestPointOnOutline } from './outline-geometry.js'

@@ -1,0 +1,5 @@
+export { Assembly } from './assembly.js'
+export { AssemblyModel } from './model.js'
+export { AssemblyView } from './view.js'
+export { AssemblyInteraction } from './interaction.js'
+export { instantiate, getPortPoint } from '../../lesson8-step2/src/instance.js'

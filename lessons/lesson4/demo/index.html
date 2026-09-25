@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 4 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(900px, calc(100% - 32px)); margin: 48px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      p { margin: 4px 0 16px; color: #64708a; }
+      #graph { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; cursor: default; }
+      [data-node-id] { cursor: move; }
+      [data-port-id] { cursor: crosshair; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 4 课：从端口拉线</h1>
+      <p>初始没有边。从橙色端口按住拖动：松到另一端口吸附成实线，松到空白形成悬空边。</p>
+      <div id="graph"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

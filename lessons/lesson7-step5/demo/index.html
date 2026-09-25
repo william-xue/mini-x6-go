@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 7.5 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(900px, calc(100% - 32px)); margin: 48px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      p { margin: 4px 0 16px; color: #64708a; }
+      #tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      #status { margin-left: auto; color: #64708a; }
+      #designer { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 7.5 课：视口坐标系</h1>
+      <p>滚轮缩放：光标下的世界点保持不动。平移工具拖动：所有内容整体移动。缩放后点击轮廓，引脚仍精确贴线。</p>
+      <div id="tools">
+        <button id="pin-tool">放置引脚</button>
+        <button id="pan-tool">平移</button>
+        <button id="select-tool">选择</button>
+        <button id="zoom-in">放大</button>
+        <button id="zoom-out">缩小</button>
+        <button id="reset">复位</button>
+        <span id="status"></span>
+      </div>
+      <div id="designer"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

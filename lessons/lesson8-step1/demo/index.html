@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 8.1 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(900px, calc(100% - 32px)); margin: 40px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      p { margin: 4px 0 16px; color: #64708a; }
+      #tools { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      #status { margin-left: auto; color: #64708a; font-size: 14px; }
+      #designer { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      #out { display: grid; grid-template-columns: 1fr 320px; gap: 16px; margin-top: 20px; }
+      pre { margin: 0; padding: 14px; border: 1px solid #d9deea; border-radius: 10px; background: #fff; font-size: 13px; overflow: auto; }
+      table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      th, td { padding: 6px 8px; border-bottom: 1px solid #e7ebf3; text-align: left; }
+      h2 { font-size: 15px; margin: 0 0 8px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 8.1 课：设计态生成元件定义</h1>
+      <p>点击轮廓放置引脚，然后按“生成定义”：引脚被编译成归一化 u/v，定义里不再保存绝对坐标。</p>
+      <div id="tools">
+        <button id="pin-tool">放置引脚</button>
+        <button id="pan-tool">平移</button>
+        <button id="compile">生成定义</button>
+        <span id="status">先在轮廓上点几个引脚</span>
+      </div>
+      <div id="designer"></div>
+      <div id="out">
+        <pre id="json"></pre>
+        <div>
+          <h2>归一化引脚</h2>
+          <table>
+            <thead><tr><th>id</th><th>u</th><th>v</th><th>direction</th></tr></thead>
+            <tbody id="pins"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

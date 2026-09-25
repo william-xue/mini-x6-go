@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 5.3 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(900px, calc(100% - 32px)); margin: 48px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      p { margin: 4px 0 16px; color: #64708a; }
+      #graph { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      [data-node-id] { cursor: move; }
+      [data-port-id], [data-terminal], [data-vertex-index] { cursor: crosshair; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 5.3 课：折点手柄</h1>
+      <p>点击折线选中，拖动中间的紫色手柄；Edge.vertices 与 polyline 路径同步变化。</p>
+      <div id="graph"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

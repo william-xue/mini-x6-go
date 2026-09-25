@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 6.3 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(900px, calc(100% - 32px)); margin: 48px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      p { margin: 4px 0 16px; color: #64708a; }
+      #graph { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      [data-node-id] { cursor: move; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 6.3 课：多选拖动三刀</h1>
+      <p>先框选两个以上节点，再拖动已选节点或橙色框内空白：移动中只推半透明预览，松手才提交真实位置。</p>
+      <div id="graph"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

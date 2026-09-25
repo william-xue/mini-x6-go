@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 8.2 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(900px, calc(100% - 32px)); margin: 40px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      p { margin: 4px 0 12px; color: #64708a; }
+      #status { margin: 0 0 12px; padding: 10px 14px; border: 1px solid #d9deea; border-radius: 8px; background: white; font-size: 14px; color: #45516b; }
+      #assembly { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      [data-instance-id] { cursor: move; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 8.2 课：一份定义 → 三个实例</h1>
+      <p>同一份定义按 1.0 / 0.6 / 1.4 三种比例实例化。点击或拖动实例，观察端口按 u/v 等比落位。</p>
+      <div id="status"></div>
+      <div id="assembly"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

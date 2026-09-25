@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 8.3 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(920px, calc(100% - 32px)); margin: 36px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      h2 { margin: 24px 0 8px; font-size: 16px; }
+      p { margin: 4px 0 12px; color: #64708a; }
+      #tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      #library button { background: #eef3ff; border-color: #b9c9ef; }
+      #status { margin-left: auto; color: #64708a; font-size: 14px; }
+      #designer, #assembly { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      [data-instance-id] { cursor: move; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 8.3 课：元件库与多实例</h1>
+      <p>在设计器里放引脚 → 保存为元件 → 点库里的元件，把它实例化到装配画布，可反复实例化、可拖动。</p>
+
+      <div id="tools">
+        <button id="pin-tool">放置引脚</button>
+        <button id="pan-tool">平移</button>
+        <button id="save">保存为元件</button>
+        <span id="status">先放几个引脚</span>
+      </div>
+      <div id="designer"></div>
+
+      <h2>元件库</h2>
+      <div id="library" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;color:#64708a"></div>
+
+      <h2>装配画布</h2>
+      <div id="assembly"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

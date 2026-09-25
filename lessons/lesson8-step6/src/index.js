@@ -1,0 +1,6 @@
+export { Assembly } from './assembly.js'
+export { AssemblyModel } from '../../lesson8-step4/src/model.js'
+export { AssemblyView } from './view.js'
+export { AssemblyInteraction } from '../../lesson8-step4/src/interaction.js'
+export { instantiate, getPortPoint } from '../../lesson8-step2/src/instance.js'
+export { routeEdge } from './routing.js'

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 7.3 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(900px, calc(100% - 32px)); margin: 48px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      p { margin: 4px 0 16px; color: #64708a; }
+      #tools { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      #status { margin-left: auto; color: #64708a; }
+      #designer { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; cursor: crosshair; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 7.3 课：不规则轮廓引脚吸附</h1>
+      <p>点击紫色虚线 50px 范围内：引脚投影到最近轮廓段，橙色短线显示计算出的外法线。</p>
+      <div id="tools">
+        <button id="pin-tool">放置引脚</button>
+        <button id="select-tool">停止放置</button>
+        <span id="status">引脚工具：点击紫色虚线附近</span>
+      </div>
+      <div id="designer"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 7.2 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(900px, calc(100% - 32px)); margin: 48px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      p { margin: 4px 0 16px; color: #64708a; }
+      #tools { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+      button, label { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      input { display: none; }
+      #status { margin-left: auto; color: #64708a; }
+      #designer { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      [data-primitive-id] { cursor: move; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 7.2 课：SVG 整体背景</h1>
+      <p>背景作为单个 image，不解析内部元素；我们自己的图元覆盖在上面并保持可编辑。</p>
+      <div id="tools">
+        <button data-kind="rect">矩形</button>
+        <button data-kind="circle">圆</button>
+        <button data-kind="ellipse">椭圆</button>
+        <button data-kind="line">直线</button>
+        <label>上传 SVG<input id="svg-file" type="file" accept=".svg,image/svg+xml" /></label>
+        <span id="status">示例背景</span>
+      </div>
+      <div id="designer"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
