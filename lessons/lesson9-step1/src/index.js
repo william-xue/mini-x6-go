@@ -1,0 +1,8 @@
+export { Assembly } from './assembly.js'
+export { History } from './history.js'
+export { applyCommand, revertCommand } from './commands.js'
+export { AssemblyInteraction } from './interaction.js'
+export { AssemblyModel } from '../../lesson8-step4/src/model.js'
+export { AssemblyView } from '../../lesson8-step6/src/view.js'
+export { instantiate, getPortPoint } from '../../lesson8-step2/src/instance.js'
+export { routeEdge } from '../../lesson8-step6/src/routing.js'

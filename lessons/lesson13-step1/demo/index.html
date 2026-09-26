@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 13.1 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(920px, calc(100% - 32px)); margin: 40px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      h2 { margin: 22px 0 8px; font-size: 16px; }
+      p { margin: 4px 0 12px; color: #64708a; }
+      #tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      button[aria-pressed='true'] { background: #eef3ff; border-color: #315fcf; }
+      #status { margin-left: auto; color: #64708a; font-size: 14px; }
+      #designer { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      #report { margin: 0; padding: 14px 16px; border: 1px solid #d9deea; border-radius: 10px; background: #0f172a; color: #d7e0f4; font: 12px/1.6 ui-monospace, monospace; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 13.1 课：轮廓从素材里读出来</h1>
+      <p>换素材不再需要人另外写一条路径。点「放置引脚」，在元件轮廓附近点一下，看引脚落在哪条图形上。</p>
+
+      <h2>素材（点一个换上）</h2>
+      <div id="tools"></div>
+
+      <div id="designer"></div>
+
+      <h2>读取诊断</h2>
+      <pre id="report"></pre>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

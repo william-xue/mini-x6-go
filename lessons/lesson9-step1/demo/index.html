@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 9.1 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(920px, calc(100% - 32px)); margin: 36px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      h2 { margin: 24px 0 8px; font-size: 16px; }
+      p { margin: 4px 0 12px; color: #64708a; }
+      #tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      button:disabled { opacity: 0.45; cursor: not-allowed; }
+      #library { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; color: #64708a; }
+      #library button { background: #eef3ff; border-color: #b9c9ef; }
+      #status { margin-left: auto; color: #64708a; font-size: 14px; }
+      #designer, #assembly { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      pre { margin: 0; padding: 14px; min-height: 90px; border: 1px solid #d9deea; border-radius: 10px; background: white; font-size: 13px; overflow: auto; }
+      svg { display: block; max-width: 100%; outline: none; }
+      [data-instance-id] { cursor: move; }
+      [data-port-id] { cursor: crosshair; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 9.1 课：命令栈与「一次操作」</h1>
+      <p>拖动实例是几十次移动，但撤销一次退回原处。快捷键 <code>Cmd/Ctrl+Z</code> 撤销，<code>Cmd/Ctrl+Shift+Z</code> 重做。</p>
+
+      <div id="tools">
+        <button id="pin-tool">放置引脚</button>
+        <button id="pan-tool">平移</button>
+        <button id="save">保存为元件</button>
+        <button id="undo">撤销</button>
+        <button id="redo">重做</button>
+        <span id="status"></span>
+      </div>
+      <div id="designer"></div>
+
+      <h2>元件库</h2>
+      <div id="library"></div>
+
+      <h2>装配画布</h2>
+      <div id="assembly"></div>
+
+      <h2>历史栈里的命令（就是普通数据，没有函数）</h2>
+      <pre id="stack"></pre>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

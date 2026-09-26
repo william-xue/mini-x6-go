@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 13.3 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(940px, calc(100% - 32px)); margin: 36px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      h2 { margin: 22px 0 8px; font-size: 16px; }
+      p { margin: 4px 0 12px; color: #64708a; }
+      #tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      #status { margin-left: auto; color: #64708a; font-size: 14px; }
+      #designer, #assembly { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #d9deea; border-radius: 10px; overflow: hidden; }
+      th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #eef1f7; font-size: 14px; }
+      th { background: #f7f9fd; color: #64708a; font-weight: 600; }
+      input, select { padding: 5px 8px; border: 1px solid #cbd3e3; border-radius: 5px; font: inherit; }
+      input { width: 110px; }
+      #library { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; color: #64708a; }
+      #library button { background: #eef3ff; border-color: #b9c9ef; }
+      #verdict { margin: 0; padding: 12px 14px; border: 1px solid #d9deea; border-radius: 10px; background: #0f172a; color: #d7e0f4; font: 12px/1.7 ui-monospace, monospace; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 13.3 课：引脚的名称、类型与连接规则</h1>
+      <p>外壳右边有个凹槽 —— 点凹槽内壁放个引脚，看它朝外是不是指向右（元件外侧）。下方那条折线是开放图形，放上去的引脚没有"朝外方向"。给引脚起名字、选类型，保存成元件、摆两台、试着连线：输出接输出会被拒绝。</p>
+
+      <div id="tools"></div>
+      <div id="designer"></div>
+
+      <h2>引脚（改名 / 改类型）</h2>
+      <table id="pinlist"></table>
+
+      <h2>元件库</h2>
+      <div id="library"></div>
+
+      <h2>装配画布</h2>
+      <div id="assembly"></div>
+
+      <h2>连接校验</h2>
+      <pre id="verdict"></pre>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

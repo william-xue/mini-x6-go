@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 13.6 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(940px, calc(100% - 32px)); margin: 36px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      h2 { margin: 22px 0 8px; font-size: 16px; }
+      p { margin: 4px 0 12px; color: #64708a; }
+      #tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      button[aria-pressed='true'] { background: #eef3ff; border-color: #315fcf; }
+      #status { margin-left: auto; color: #64708a; font-size: 14px; }
+      #designer { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      svg { display: block; max-width: 100%; outline: none; }
+      #report { margin: 0; padding: 14px 16px; border: 1px solid #d9deea; border-radius: 10px; background: #0f172a; color: #d7e0f4; font: 12px/1.6 ui-monospace, monospace; white-space: pre-wrap; }
+      #hint { margin: 14px 0; padding: 12px 14px; border: 1px solid #ffd9a8; border-radius: 10px; background: #fff8ec; color: #7a4b00; font-size: 14px; }
+      #legend { display: flex; gap: 18px; margin: 10px 0 0; color: #64708a; font-size: 13px; }
+      .swatch { display: inline-block; width: 26px; height: 0; border-top-width: 3px; border-top-style: solid; vertical-align: middle; margin-right: 6px; }
+      .live { border-top-color: #8b5cf6; border-top-style: dashed; }
+      .ghost { border-top-color: #cfd4e0; border-top-style: dotted; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 13.6 课：看不见的边不能点</h1>
+      <p>素材里两个图形重叠时，下面那个<b>露不出来</b>的边照样能吸引脚 —— 你点在看得见的填充上，引脚却落到屏幕上看不见的线上。这一课给轮廓点加一次「遮挡判定」：<b>被别的图形盖住的点标成 gray，落点时跳过它</b>。</p>
+
+      <div id="tools"></div>
+      <div id="designer"></div>
+
+      <div id="legend">
+        <span><i class="swatch live"></i>看得见的边（可以放引脚）</span>
+        <span><i class="swatch ghost"></i>被盖住的边（放不了）</span>
+      </div>
+
+      <div id="hint">
+        点「忽略遮挡」切到开（= 13.5 之前的行为），再点「点这里试试」里列出的那几个位置 ——
+        同一个位置，两种模式的落点会不一样。<b>灰色的边不会再吸走你的引脚。</b>
+      </div>
+
+      <h2>遮挡诊断 · 点这里试试</h2>
+      <pre id="report"></pre>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

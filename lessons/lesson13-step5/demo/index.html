@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mini-x6-go · 第 13.5 课</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f6fa; }
+      main { width: min(1360px, calc(100% - 32px)); margin: 36px auto; }
+      h1 { margin: 0; font-size: 24px; }
+      h2 { margin: 22px 0 8px; font-size: 16px; }
+      p { margin: 4px 0 12px; color: #64708a; }
+      #tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+      button { padding: 8px 14px; border: 1px solid #cbd3e3; border-radius: 6px; background: white; cursor: pointer; }
+      button[aria-pressed='true'] { background: #eef3ff; border-color: #315fcf; }
+      #board { display: flex; gap: 16px; align-items: flex-start; }
+      .panel { flex: 1 1 0; min-width: 0; }
+      .panel-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+      .panel-head h3 { margin: 0; font-size: 15px; }
+      .bad { color: #c0392b; }
+      .good { color: #315fcf; }
+      .range { margin-left: auto; color: #64708a; font: 12px ui-monospace, monospace; }
+      .designer { overflow: hidden; border: 1px solid #d9deea; border-radius: 10px; background: white; }
+      .note { margin: 6px 0 0; min-height: 20px; color: #64708a; font-size: 13px; }
+      svg { display: block; max-width: 100%; outline: none; }
+      #report { margin: 0; padding: 14px 16px; border: 1px solid #d9deea; border-radius: 10px; background: #0f172a; color: #d7e0f4; font: 12px/1.6 ui-monospace, monospace; white-space: pre-wrap; }
+      #hint { margin: 14px 0; padding: 12px 14px; border: 1px solid #ffd9a8; border-radius: 10px; background: #fff8ec; color: #7a4b00; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>第 13.5 课：坐标换算 —— 有没有 getCTM，差多少</h1>
+      <p>同一份素材、同一段采样代码，只有一个开关不同：右边用 <code>getCTM</code> 把点换算到画布坐标，左边直接放行（这就是前 12 课的情形，只不过那时点的来源是人手写的 pathData）。</p>
+
+      <div id="tools"></div>
+
+      <div id="board">
+        <div class="panel">
+          <div class="panel-head">
+            <h3 class="bad">不换算（假装没有 getCTM）</h3>
+            <span class="range" id="range-left"></span>
+          </div>
+          <div class="designer" id="pen-left"></div>
+          <p class="note" id="note-left"></p>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <h3 class="good">用 getCTM 换算</h3>
+            <span class="range" id="range-right"></span>
+          </div>
+          <div class="designer" id="pen-right"></div>
+          <p class="note" id="note-right"></p>
+        </div>
+      </div>
+
+      <div id="hint">
+        在左右两块画布的<b>同一个位置</b>各点一下（比如图形中间偏上），然后看引脚落在哪 ——
+        右边会贴在图形边上，左边会跑到左上角那一小块里。
+      </div>
+
+      <h2>两边各读到什么</h2>
+      <pre id="report"></pre>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
